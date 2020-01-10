@@ -1,13 +1,33 @@
 ## Demo
 
+----------
+
 ## Project Setup
 
+-----------
+
 ## Development
+Users Stories:
+
+- As a player, so I can play the game, I would like to insert my name before starting playing
+- As a player, so I can choose what move to do, I would like to see a 3 choices (rock, paper and scissors)
+- As a player, so I can choose my move, I would like to choose one option
+- As a player, so I can know how the game is going, I would like to see the choice of my opponent(computer)
+- As a player, so I can know if the game is over, I would like to see a winner declared.
+
+Class:
+* Game(turn, player, result)
+* Player(choice)
+* Choice(Rock, Paper, Scissor)
+
+Methods:
+
+-----------
 
 ## Makers Instruction
 
 Task
-----
+------
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -47,11 +67,3 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Rock beats Scissors
 - Scissors beats Paper
 - Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
