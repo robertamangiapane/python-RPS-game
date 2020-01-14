@@ -5,16 +5,24 @@ class Game:
 
     def __init__(self):
         self.player_name = ""
+        self.players = ["Player", "Computer"]
         self.turn = ""
-
-    def test(self, number):
-        return number
+        self.options = ["Rock", "Paper", "Scissors"]
+        self.player_choice = ""
+        self.computer_choice = ""
 
     def insert_player_game(self, name):
         self.player_name = name
         return self.player_name
 
     def start_game(self):
-        turn = ["Player", "Computer"]
-        self.turn = random.choice(turn)
+        self.turn = random.choice(self.players)
         return self.turn
+
+    def player_turn_option(self, choice):
+        self.player_choice = choice
+        return self.player_choice
+
+    def computer_turn_option(self):
+        self.computer_choice = random.choice(self.options)
+        return self.computer_choice
