@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock
-from game import Game
+from gameClass import Game
 
 
 class TestGame(unittest.TestCase):
