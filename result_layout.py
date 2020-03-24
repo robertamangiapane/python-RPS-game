@@ -33,7 +33,6 @@ class Result(MainLayout):
         self.new_match_button.clicked.connect(connection[1])
 
     def show(self):
-        # super().show()
         self.player_name_label.show()
         self.computer_choice.show()
         self.game_result.show()
@@ -41,8 +40,6 @@ class Result(MainLayout):
         self.new_match_button.show()
 
     def hide(self):
-        # super().hide()
-
         self.player_name_label.hide()
         self.computer_choice.hide()
         self.game_result.hide()
