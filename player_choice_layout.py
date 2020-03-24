@@ -32,7 +32,10 @@ class PlayerChoice(MainLayout):
         self.scissors_button.clicked.connect(connection)
 
     def show(self):
-        super().show()
+        self.player_name_label.show()
+        self.rock_button.show()
+        self.paper_button.show()
+        self.scissors_button.show()
 
     def hide(self):
         self.player_name_label.hide()

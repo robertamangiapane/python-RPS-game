@@ -17,6 +17,7 @@ class StartNewGame(MainLayout):
         self.player_name_label.setText("<font color=white size=5>{}</font>".format(text))
         self.player_name_label.setAlignment(Qt.AlignTop)
 
+        self.player_name_textbox.clear()
         self.player_name_textbox.move(30, 70)
         self.player_name_textbox.resize(350, 35)
         self.player_name_textbox.setAlignment(Qt.AlignCenter)
@@ -32,10 +33,11 @@ class StartNewGame(MainLayout):
         self.new_game_button.clicked.connect(connection)
 
     def show(self):
-        super().show()
+        self.player_name_label.show()
+        self.player_name_textbox.show()
+        self.new_game_button.show()
 
     def hide(self):
-        # super().hide()
         self.player_name_label.hide()
         self.player_name_textbox.hide()
         self.new_game_button.hide()

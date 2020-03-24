@@ -18,8 +18,11 @@ class Result(MainLayout):
         self.layout.addWidget(self.player_name_label)
         self.layout.addWidget(self.computer_choice)
         self.layout.addWidget(self.game_result)
+
         self.new_game_button.setText('Start Game')
         self.new_match_button.setText('New Match')
+        self.layout.addWidget(self.new_game_button, alignment=Qt.AlignBottom)
+        self.layout.addWidget(self.new_match_button, alignment=Qt.AlignBottom)
 
         self.player_name_label.setText("<font color=white size=10>You chose: {}</font>".format(arguments[0]))
         self.computer_choice.setText("<font color=white size=10>Computer chose: {}</font>".format(arguments[1]))
@@ -30,7 +33,18 @@ class Result(MainLayout):
         self.new_match_button.clicked.connect(connection[1])
 
     def show(self):
-        super().show()
+        # super().show()
+        self.player_name_label.show()
+        self.computer_choice.show()
+        self.game_result.show()
+        self.new_game_button.show()
+        self.new_match_button.show()
 
     def hide(self):
-        super().hide()
+        # super().hide()
+
+        self.player_name_label.hide()
+        self.computer_choice.hide()
+        self.game_result.hide()
+        self.new_game_button.hide()
+        self.new_match_button.hide()
