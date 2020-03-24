@@ -17,11 +17,11 @@ class GameWindow(QWidget):
         self.player_name_textbox = QLineEdit(self)
         self.computer_choice = QLabel()
         self.game_result = QLabel()
-        self.start_game_button = QPushButton()
+        self.new_game_button = QPushButton()
+        self.new_match_button = QPushButton()
         self.paper_button = QPushButton()
         self.rock_button = QPushButton()
         self.scissors_button = QPushButton()
-
         self.setup_main_window()
 
     def setup_main_window(self):
@@ -38,18 +38,19 @@ class GameWindow(QWidget):
         font.setPointSize(23)
         self.player_name_textbox.setFont(font)
 
-        self.start_game_button.setText('Start New Game')
-        self.start_game_button.clicked.connect(self.setup_game_window)
-        self.layout.addWidget(self.start_game_button)
+        self.new_game_button.setText('Start Game')
+        self.new_match_button.setText('New Match')
+        self.new_game_button.clicked.connect(self.new_game_window)
+        self.layout.addWidget(self.new_game_button)
 
-    def setup_game_window(self):
+    def new_game_window(self):
         self.resize(400, 200)
         self.game.player_name = self.player_name_textbox.text()
         self.player_label.setText("<font color=white size=10>Hello {}, "
                                   "choose one option:</font>".format(self.player_name_textbox.text()))
 
         self.player_name_textbox.hide()
-        self.start_game_button.hide()
+        self.new_game_button.hide()
         self.rock_button.setText('Rock')
         self.paper_button.setText('Paper')
         self.scissors_button.setText('Scissors')
@@ -62,11 +63,11 @@ class GameWindow(QWidget):
         self.layout.addWidget(self.paper_button)
         self.layout.addWidget(self.scissors_button)
 
-        self.rock_button.clicked.connect(self.on_choice_clicked)
-        self.paper_button.clicked.connect(self.on_choice_clicked)
-        self.scissors_button.clicked.connect(self.on_choice_clicked)
+        self.rock_button.clicked.connect(self.on_choice_window)
+        self.paper_button.clicked.connect(self.on_choice_window)
+        self.scissors_button.clicked.connect(self.on_choice_window)
 
-    def on_choice_clicked(self):
+    def on_choice_window(self):
         sending_button = self.sender()
         self.game.player_choice = self.game.player_turn_option(sending_button.objectName())
         self.player_label.setText("<font color=white size=10>You chose: {}</font>".format(self.game.player_choice))
@@ -80,9 +81,12 @@ class GameWindow(QWidget):
         self.paper_button.hide()
         self.scissors_button.hide()
 
-        self.layout.addWidget(self.start_game_button, alignment=Qt.AlignBottom)
-        self.start_game_button.show()
-        self.start_game_button.clicked.connect(self.setup_game_window)
+        self.layout.addWidget(self.new_game_button, alignment=Qt.AlignBottom)
+        self.layout.addWidget(self.new_match_button, alignment=Qt.AlignBottom)
+        self.new_game_button.show()
+        self.new_match_button.show()
+        self.new_game_button.clicked.connect(self.setup_main_window)
+        self.new_match_button.clicked.connect(self.new_game_window)
 
 
 if __name__ == '__main__':
