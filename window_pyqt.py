@@ -56,6 +56,7 @@ class GameWindow(QWidget):
 
     def setup_choice_window(self):
         self.start_new_game_window.hide()
+        self.result_window.hide()
         self.player_choice_window.show()
         self.resize(400, 200)
         self.game.player_name = self.start_new_game_window.player_name_textbox.text()
@@ -86,7 +87,6 @@ class GameWindow(QWidget):
         # self.scissors_button.clicked.connect(self.setup_result_window)
 
         self.player_choice_window.connect(self.setup_result_window)
-
 
     def setup_result_window(self):
         self.player_choice_window.hide()
