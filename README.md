@@ -1,9 +1,22 @@
 ## Demo
-
+![RPSGame](screenshot/screen_01.png)
+![RPSGame](screenshot/screen_02.png)
+![RPSGame](screenshot/screen_03.png)
 ----------
 
 ## Project Setup
 
+- Clone the repo
+- Create venv
+    `python3 -m venv venv`
+- Activate venv
+    `source venv/bin/activate`
+- Install package
+    `pip install -r requirements.txt`
+
+    Trouble shouting: if pip install fails try `pip3 install --upgrade pip` and then install requirements
+- Play the game
+    `python rps_game.py`
 -----------
 
 ## Development

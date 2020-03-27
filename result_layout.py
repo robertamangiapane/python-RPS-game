@@ -10,8 +10,8 @@ class Result(MainLayout):
         self.player_name_label = QLabel()
         self.computer_choice = QLabel()
         self.game_result = QLabel()
-        self.new_game_button = QPushButton()
         self.new_match_button = QPushButton()
+        self.new_game_button = QPushButton()
 
     def build_layout(self, arguments):
         super().build_layout(arguments)
@@ -19,10 +19,10 @@ class Result(MainLayout):
         self.layout.addWidget(self.computer_choice)
         self.layout.addWidget(self.game_result)
 
-        self.new_game_button.setText('Start Game')
-        self.new_match_button.setText('New Match')
-        self.layout.addWidget(self.new_game_button, alignment=Qt.AlignBottom)
+        self.new_game_button.setText('Start New Game')
+        self.new_match_button.setText('Play again')
         self.layout.addWidget(self.new_match_button, alignment=Qt.AlignBottom)
+        self.layout.addWidget(self.new_game_button, alignment=Qt.AlignBottom)
 
         self.player_name_label.setText("<font color=white size=10>You chose: {}</font>".format(arguments[0]))
         self.computer_choice.setText("<font color=white size=10>Computer chose: {}</font>".format(arguments[1]))
